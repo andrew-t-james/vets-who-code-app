@@ -10,18 +10,16 @@ exports[`<TroopsAtGoogle /> should render correctly 1`] = `
   />
   
   <picture>
-    <source
-      sizes=""
-      srcset="some-source-here"
-    />
     <img
       alt=""
+      sizes=""
       src="some-source-here"
-      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 1;"
+      srcset="some-source-here"
+      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0;"
     />
   </picture>
   <noscript>
-    &lt;picture&gt;&lt;source srcSet="some-source-here" /&gt;&lt;img src="some-source-here" alt="" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+    &lt;picture&gt;&lt;img srcset="some-source-here" src="some-source-here" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
   </noscript>
 </div>
 `;
