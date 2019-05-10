@@ -1,11 +1,13 @@
 {
-  presets: [
-    "@babel/react",
-    "@babel/env"
-  ],
-  plugins: [
+  "presets": ["@babel/react", "@babel/env"],
+  "plugins": [
     "@babel/plugin-syntax-dynamic-import",
-    "transform-class-properties",
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
     [
       "@babel/transform-runtime",
       {
