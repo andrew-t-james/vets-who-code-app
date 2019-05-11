@@ -144,10 +144,7 @@ exports[`<Mentor /> should render correctly 1`] = `
               <li>
                  
                 <a
-                  href="https://medium.com/vets-who-code"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  without="true"
+                  href="/blog"
                 >
                   <span>
                     Blog
