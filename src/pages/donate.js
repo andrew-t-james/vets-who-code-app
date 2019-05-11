@@ -98,7 +98,6 @@ class Donate extends Component {
                   frameBorder={0}
                   tabIndex={0}
                 />
-
               </div>
             </div>
           </div>
