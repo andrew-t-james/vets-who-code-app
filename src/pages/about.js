@@ -9,6 +9,7 @@ import andrew from '../images/team/andrew.png'
 import thisIsUs from '../images/this_is_us.png'
 
 import facebookVideo from '../video/vwc-facebook-reel.mp4'
+import PageHeader from '../components/PageHeader';
 
 class About extends Component {
   videoRef = React.createRef()
@@ -26,25 +27,7 @@ class About extends Component {
   render() {
     return (
       <Layout>
-        <header
-          className="inner-header overlay grey text-center slim-bg"
-          style={{
-            backgroundImage: `url(${thisIsUs})`,
-            backgroundPositionY: 'bottom',
-          }}
-        >
-          <div className="overlay-01" />
-          <div className="container">
-            <h2 className="text-center text-uppercase">About</h2>
-            <div className="breadcrumb">
-              <Link to="/">Home</Link>
-              <span>/</span>
-              <Link to="/about" className="page-active">
-                About
-              </Link>
-            </div>
-          </div>
-        </header>
+        <PageHeader title="about" />
         <section id="about" className="small-top-pad section bg-default">
           <div className="container">
             <div className="row">

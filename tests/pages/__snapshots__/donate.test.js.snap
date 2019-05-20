@@ -154,32 +154,7 @@ exports[`<Donate /> should render correctly 1`] = `
         </div>
       </div>
     </nav>
-    <header
-      class="inner-header overlay grey text-center slim-bg "
-      style="background-image: url(image-mock); background-position-y: bottom;"
-    >
-      <div
-        class="overlay-01"
-      />
-      <div
-        class="container"
-      >
-        <h2
-          class="text-center text-uppercase"
-        >
-          Donate
-        </h2>
-        <div
-          class="breadcrumb"
-        >
-          gatsby-link
-          <span>
-            /
-          </span>
-          gatsby-link
-        </div>
-      </div>
-    </header>
+    static-query
     <section
       class="cause_single section bg-default single pad-regular"
       id="cause_singe"

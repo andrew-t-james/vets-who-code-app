@@ -7,6 +7,7 @@ import code from '../images/code.png'
 import john from '../images/profile.png'
 import thisIsUs from '../images/this_is_us.png'
 import '../assets/css/donate.css'
+import PageHeader from '../components/PageHeader';
 
 class Donate extends Component {
   state = {
@@ -22,25 +23,7 @@ class Donate extends Component {
 
     return (
       <Layout>
-        <header
-          className="inner-header overlay grey text-center slim-bg "
-          style={{
-            backgroundImage: `url(${thisIsUs})`,
-            backgroundPositionY: 'bottom',
-          }}
-        >
-          <div className="overlay-01" />
-          <div className="container">
-            <h2 className="text-center text-uppercase">Donate</h2>
-            <div className="breadcrumb">
-              <Link to="/">Home</Link>
-              <span>/</span>
-              <Link to="/donate" className="page-active">
-                Donate
-              </Link>
-            </div>
-          </div>
-        </header>
+        <PageHeader title="donate" />
         <section id="cause_singe" className="cause_single section bg-default single pad-regular">
           <div className="container">
             <div className="row">
