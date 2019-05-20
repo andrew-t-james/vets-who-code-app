@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "repository": "Vets-Who-Code/vwc-site",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "13.2.0",
     "@reach/dialog": "0.2.8",
     "gatsby": "2.4.3",
     "gatsby-image": "2.0.41",
@@ -23,7 +24,9 @@
     "react-slick": "0.24.0",
     "react-spring": "8.0.20",
     "react-toastify": "5.1.0",
+    "reading-time": "1.2.0",
     "sharp": "0.22.1",
+    "shx": "0.3.2",
     "slick-carousel": "1.8.1"
   },
   "keywords": [
@@ -31,6 +34,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "clean": "shx rm -rf .cache && shx echo Cache dir removed",
     "build": "gatsby build",
     "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "format:src": "prettier --write \"src/**/*.js\"",
