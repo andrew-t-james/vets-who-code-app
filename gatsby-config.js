@@ -2,7 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `VetsWhoCode`
+    title: `VetsWhoCode`,
   },
   plugins: [
     {
@@ -20,8 +20,8 @@ module.exports = {
       options: {
         printRejected: true, // Print removed selectors and processed file names
         // develop: true, // Enable while using `gatsby develop`
-        purgeOnly : [`components/`, `/main.css`, `bootstrap/`, `css/`], // Purge only these files/folders
-      }
+        purgeOnly: [`components/`, `/main.css`, `bootstrap/`, `css/`], // Purge only these files/folders
+      },
     },
     {
       resolve: `gatsby-plugin-mailchimp`,
@@ -33,9 +33,9 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken:process.env.CONTENTFUL_ACCESS_TOKEN
-      }
-    }
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
   ],
-  pathPrefix: `/`
-};
+  pathPrefix: `/`,
+}
