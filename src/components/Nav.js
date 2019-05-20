@@ -115,14 +115,9 @@ class Nav extends Component {
               </li>
               <li>
                 {' '}
-                <a
-                  href="https://medium.com/vets-who-code"
-                  without="true"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
+                <Link to="/blog">
                   <span>Blog</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
