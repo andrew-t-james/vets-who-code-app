@@ -1,13 +1,9 @@
 import React, { Component, Fragment } from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-
-import thisIsUs from '../images/this_is_us.png'
-
 import Accordion from '../components/Accordion/Accordion'
 import Panel from '../components/Accordion/Panel'
-import PageHeader from '../components/PageHeader';
+import PageHeader from '../components/PageHeader'
 
 export default class Mentor extends Component {
   state = {

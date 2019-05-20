@@ -71,7 +71,7 @@
   "lint-staged": {
     "src/**/*.js": [
       "eslint",
-      "yarn format",
+      "npm run format",
       "git add"
     ]
   },

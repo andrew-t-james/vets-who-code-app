@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
+
 import Layout from '../components/Layout'
-import { Link } from 'gatsby'
+import PageHeader from '../components/PageHeader'
 
 import vwcGIF from '../images/vwc.gif'
 import jerome from '../images/team/jerome.png'
 import noel from '../images/team/noel.png'
 import andrew from '../images/team/andrew.png'
-import thisIsUs from '../images/this_is_us.png'
-
 import facebookVideo from '../video/vwc-facebook-reel.mp4'
-import PageHeader from '../components/PageHeader';
 
 class About extends Component {
   videoRef = React.createRef()

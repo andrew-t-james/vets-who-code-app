@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-import DonateModal from '../components/DonateModal'
-import code from '../images/code.png'
+// import DonateModal from '../components/DonateModal'
+// import code from '../images/code.png'
 import john from '../images/profile.png'
-import thisIsUs from '../images/this_is_us.png'
+// import thisIsUs from '../images/this_is_us.png'
 import '../assets/css/donate.css'
-import PageHeader from '../components/PageHeader';
+import PageHeader from '../components/PageHeader'
 
 class Donate extends Component {
   state = {
@@ -19,7 +18,7 @@ class Donate extends Component {
   closeModal = () => this.setState({ modalIsOpen: false })
 
   render() {
-    const { modalIsOpen } = this.state
+    // const { modalIsOpen } = this.state
 
     return (
       <Layout>

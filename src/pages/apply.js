@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-import thisIsUs from '../images/this_is_us.png'
-import PageHeader from '../components/PageHeader';
+import PageHeader from '../components/PageHeader'
 
 export default class Apply extends Component {
   state = {

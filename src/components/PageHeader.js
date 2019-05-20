@@ -10,7 +10,6 @@ const PageHeader = ({ title }) => {
             childImageSharp {
               fixed(width: 1200) {
                 ...GatsbyImageSharpFixed
-
               }
             }
           }
