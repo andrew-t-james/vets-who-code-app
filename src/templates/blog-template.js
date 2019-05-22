@@ -1,98 +1,74 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
-import Image from 'gatsby-image'
 import Layout from '../components/Layout'
-import readingTime from 'reading-time'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-import thisIsUs from '../images/this_is_us.png'
+import PageHeader from '../components/PageHeader'
 
-const BlogPost = ({ data }) => {
-  const options = {
-    renderNode: {
-      // eslint-disable-next-line react/display-name
-      'embedded-asset-block': node => {
-        const alt = node.data.target.fields.title['en-US']
-        const url = node.data.target.fields.file['en-US'].url
-        return <img alt={alt} src={url} />
-      },
-    },
-  }
-  const contentfulBlogContent = documentToReactComponents(
-    data.contentfulBlogPost.body.json,
-    options
-  )
-  let text = ''
-  contentfulBlogContent.forEach(reactElement => (text += reactElement.props.children))
-  const readingStats = readingTime(text)
+const Blog = ({ data, pageContext }) => {
+  const { currentPage, isFirstPage, isLastPage, totalPages } = pageContext
+  const nextPage = `/blog/${String(currentPage + 1)}`
+  const prevPage = currentPage - 1 === 1 ? '/blog' : `/blog/${String(currentPage - 1)}`
 
   return (
     <Layout>
-      <header
-        className="inner-header overlay grey text-center slim-bg "
-        style={{
-          backgroundImage: `url(${thisIsUs})`,
-          backgroundPositionY: 'bottom',
-        }}
-      >
-        <div className="overlay-01" />
-        <div className="container">
-          <h2 className="text-center text-uppercase">Blog</h2>
-          <div className="breadcrumb">
-            <Link to="/blog">BLog</Link>
-            <span>/</span>
-            <Link to="/contact" className="page-active">
-              Contact Us
-            </Link>
+      <PageHeader title="blog" />
+      {data.allContentfulBlogPost.nodes.map(post => (
+        <Link to={`/blog/${post.slug}`} key={post.id}>
+          <div>
+            <h2>{post.title}</h2>
+            <p>{post.publishedDate}</p>
           </div>
-        </div>
-      </header>
-      <h2>{data.contentfulBlogPost.title}</h2>
-      <h4>{data.contentfulBlogPost.author.authorName}</h4>
+        </Link>
+      ))}
       <div
         style={{
           display: 'flex',
-          alignItems: 'center',
           justifyContent: 'space-around',
-          width: 150,
+          alignItems: 'center',
+          maxWidth: 300,
+          margin: '0 auto',
         }}
       >
-        <Image
-          alt={data.contentfulBlogPost.author.authorName}
-          fixed={data.contentfulBlogPost.author.authorImage.fixed}
-          style={{ width: 50, height: 50, borderRadius: 100 }}
-        />
-        <p>{readingStats.text}</p>
+        {!isFirstPage && (
+          <Link to={prevPage} rel="prev">
+            Previous Page
+          </Link>
+        )}
+        {Array.from({ length: totalPages }, (_, index) => (
+          <Link key={index} to={`/blog/${index === 0 ? '' : index + 1}`}>
+            {index + 1}
+          </Link>
+        ))}
+        {!isLastPage && (
+          <Link to={nextPage} rel="next">
+            Next Page
+          </Link>
+        )}
       </div>
-      {contentfulBlogContent}
     </Layout>
   )
 }
 
 export const query = graphql`
-  query($slug: String) {
-    contentfulBlogPost(slug: { eq: $slug }) {
-      author {
-        authorName
-        authorImage {
-          fixed(width: 100) {
-            ...GatsbyContentfulFixed_tracedSVG
-          }
-        }
-      }
-      id
-      slug
-      title
-      body {
-        json
+  query($limit: Int!, $skip: Int!) {
+    allContentfulBlogPost(
+      sort: { fields: publishedDate, order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
+      totalCount
+      nodes {
+        id
+        title
+        slug
+        publishedDate(formatString: "MMMM Do, YYYY")
       }
     }
   }
 `
 
-BlogPost.propTypes = {
+Blog.propTypes = {
   data: PropTypes.object,
 }
-
-export default BlogPost
+export default Blog
