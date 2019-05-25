@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, StaticQuery, graphql } from 'gatsby'
 
-const PageHeader = ({ title }) => {
+const PageHeader = ({ title, link }) => {
+  console.log(link)
   return (
     <StaticQuery
       query={graphql`
@@ -28,7 +29,7 @@ const PageHeader = ({ title }) => {
           <div className="container">
             <h2 className="text-center text-uppercase">{title}</h2>
             <div className="breadcrumb">
-              <Link to="/">Home</Link>
+              <Link to={link === undefined ? '/' : `/${link}`}>{link === undefined ? 'home' : link}</Link>
               <span>/</span>
               <Link to="/contact" className="page-active">
                 Contact Us
@@ -43,6 +44,7 @@ const PageHeader = ({ title }) => {
 
 PageHeader.propTypes = {
   title: PropTypes.string.isRequired,
+  link: PropTypes.string
 }
 
 export default PageHeader
