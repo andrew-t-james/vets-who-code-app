@@ -29,7 +29,9 @@ const PageHeader = ({ title, link }) => {
           <div className="container">
             <h2 className="text-center text-uppercase">{title}</h2>
             <div className="breadcrumb">
-              <Link to={link === undefined ? '/' : `/${link}`}>{link === undefined ? 'home' : link}</Link>
+              <Link to={link === undefined ? '/' : `/${link}`}>
+                {link === undefined ? 'home' : link}
+              </Link>
               <span>/</span>
               <Link to="/contact" className="page-active">
                 Contact Us
@@ -44,7 +46,7 @@ const PageHeader = ({ title, link }) => {
 
 PageHeader.propTypes = {
   title: PropTypes.string.isRequired,
-  link: PropTypes.string
+  link: PropTypes.string,
 }
 
 export default PageHeader

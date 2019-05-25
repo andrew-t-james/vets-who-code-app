@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import Layout from '../components/Layout'
 import readingTime from 'reading-time'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-import thisIsUs from '../images/this_is_us.png'
+import PageHeader from '../components/PageHeader'
 
 const BlogPost = ({ data }) => {
   const options = {
@@ -29,25 +29,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <header
-        className="inner-header overlay grey text-center slim-bg "
-        style={{
-          backgroundImage: `url(${thisIsUs})`,
-          backgroundPositionY: 'bottom',
-        }}
-      >
-        <div className="overlay-01" />
-        <div className="container">
-          <h2 className="text-center text-uppercase">Blog</h2>
-          <div className="breadcrumb">
-            <Link to="/blog">BLog</Link>
-            <span>/</span>
-            <Link to="/contact" className="page-active">
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </header>
+      <PageHeader title={data.contentfulBlogPost.title} link={'blog'} />
       <h2>{data.contentfulBlogPost.title}</h2>
       <h4>{data.contentfulBlogPost.author.authorName}</h4>
       <div
