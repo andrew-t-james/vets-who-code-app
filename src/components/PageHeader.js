@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link, StaticQuery, graphql } from 'gatsby'
 
 const PageHeader = ({ title, link }) => {
-  console.log(link)
   return (
     <StaticQuery
       query={graphql`
