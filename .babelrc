@@ -1,17 +1,24 @@
 {
-  "presets": ["@babel/react", "@babel/env"],
+  "presets": [
+    "@babel/react",
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [
+            ">0.25%",
+            "not dead"
+          ]
+        }
+      }
+    ]
+  ],
   "plugins": [
     "@babel/plugin-syntax-dynamic-import",
     [
       "@babel/plugin-proposal-class-properties",
       {
         "loose": true
-      }
-    ],
-    [
-      "@babel/transform-runtime",
-      {
-        "regenerator": true
       }
     ]
   ]

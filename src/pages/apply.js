@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 
@@ -70,7 +69,7 @@ export default class Apply extends Component {
       })
       .catch(() => {
         const formHeading = 'OOPS Some thing went wrong'
-        this.setState({ message, formError: true, formHeading })
+        this.setState({ formError: true, formHeading })
       })
 
     this.setState(this.resetForm)
