@@ -114,14 +114,17 @@ function Nav() {
               </Link>
             </li>
             <li role="menuitem">
-              <a
+              {/* <a
                 href="https://medium.com/vets-who-code"
                 without="true"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <span>Blog</span>
-              </a>
+              </a> */}
+              <Link to="/blog">
+                <span>Blog</span>
+              </Link>
             </li>
           </ul>
         </div>
