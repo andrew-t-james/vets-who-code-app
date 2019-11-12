@@ -1,9 +1,70 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
 
+import Layout from '../components/Layout'
+import Icon from '../components/Icon'
 import PageHeader from '../components/PageHeader'
+
+function BlogPost({ title, author, publishedDate, slug, description }) {
+  const excerpt = description.content[0].content[0].value
+
+  return (
+    <article className="post">
+      <div className="row">
+        <div className="col-md-4" />
+
+        <div className="col-md-8">
+          <div className="entry-meta">
+            <h4 className="entry-title">
+              <Link to={`/blog/${slug}`} hidefocus="true" style={{ outline: 'none' }}>
+                {title}.
+              </Link>
+            </h4>
+
+            <div className="entry-meta-data">
+              <span className="author">
+                {' '}
+                by{' '}
+                <a
+                  href="#"
+                  title="Posts by Sandee Rogers"
+                  rel="author"
+                  hidefocus="true"
+                  style={{ outline: 'none' }}
+                >
+                  {author}
+                </a>
+              </span>
+
+              <time className="entry-date" dateTime="">
+                <span className="blog-list-icon">
+                  <Icon iconName="calendar" fill="#999999" />
+                </span>
+                {publishedDate}
+              </time>
+            </div>
+          </div>
+
+          <div className="entry-content">
+            <p>{excerpt}</p>
+          </div>
+
+          <div className="entry-meta clearfix">
+            <Link
+              to={`/blog/${slug}`}
+              className="btn btn-charity-default btn-read-more"
+              hidefocus="true"
+              style={{ outline: 'none' }}
+            >
+              <span>Read More</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </article>
+  )
+}
 
 const Blog = ({ data, pageContext }) => {
   const { currentPage, isFirstPage, isLastPage, totalPages } = pageContext
@@ -13,14 +74,25 @@ const Blog = ({ data, pageContext }) => {
   return (
     <Layout>
       <PageHeader title="blog" />
-      {data.allContentfulBlogPost.nodes.map(post => (
-        <Link to={`/blog/${post.slug}`} key={post.id}>
-          <div>
-            <h2>{post.title}</h2>
-            <p>{post.publishedDate}</p>
+      <section id="blog-page" className="section  bg-default">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 col-sm-12">
+              {data.allContentfulBlogPost.nodes.map(post => (
+                <BlogPost
+                  key={post.id}
+                  title={post.title}
+                  author={post.author.authorName}
+                  publishedDate={post.publishedDate}
+                  slug={post.slug}
+                  description={post.body.json}
+                />
+              ))}
+            </div>
           </div>
-        </Link>
-      ))}
+        </div>
+      </section>
+
       <div
         style={{
           display: 'flex',
@@ -59,10 +131,16 @@ export const query = graphql`
     ) {
       totalCount
       nodes {
+        author {
+          authorName
+        }
         id
         title
         slug
         publishedDate(formatString: "MMMM Do, YYYY")
+        body {
+          json
+        }
       }
     }
   }
