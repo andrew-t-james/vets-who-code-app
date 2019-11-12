@@ -5,6 +5,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "13.2.0",
     "babel-preset-gatsby": "0.2.0",
+    "dotenv": "8.2.0",
     "gatsby": "2.11.7",
     "gatsby-background-image": "0.7.6",
     "gatsby-image": "2.2.3",
@@ -16,6 +17,7 @@
     "gatsby-plugin-prefetch-google-fonts": "1.4.2",
     "gatsby-plugin-react-helmet": "3.1.0",
     "gatsby-plugin-sharp": "2.2.1",
+    "gatsby-source-contentful": "2.1.54",
     "gatsby-source-filesystem": "2.1.1",
     "gatsby-transformer-sharp": "2.2.0",
     "generate": "0.14.0",
@@ -28,6 +30,7 @@
     "react-modal": "3.8.2",
     "react-slick": "0.24.0",
     "react-toastify": "5.3.1",
+    "reading-time": "1.2.0",
     "sharp": "0.22.1",
     "slick-carousel": "1.8.1",
     "typeface-lato": "0.0.54",
@@ -39,7 +42,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "clean": "shx rm -rf .cache && shx echo Cache dir removed",
+    "clean": "gatsby clean",
     "build": "gatsby build",
     "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "format:src": "prettier --write \"src/**/*.js\"",
@@ -50,8 +53,7 @@
     "test:coverage": "jest --env=jsdom --coverage",
     "view:coverage": "open coverage/lcov-report/index.html",
     "lint": "lint-staged",
-    "heroku-postbuild": "gatsby build",
-    "clean": "gatsby clean"
+    "heroku-postbuild": "gatsby build"
   },
   "devDependencies": {
     "@babel/core": "7.5.4",
@@ -59,6 +61,7 @@
     "babel-eslint": "10.0.2",
     "babel-jest": "24.8.0",
     "babel-preset-gatsby-package": "0.2.0",
+    "cross-env": "6.0.3",
     "eslint": "6.0.1",
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-prettier": "3.1.0",
