@@ -66,6 +66,29 @@ function BlogPost({ title, author, publishedDate, slug, description }) {
   )
 }
 
+BlogPost.propTypes = {
+  title: PropTypes.string,
+  author: PropTypes.string,
+  publishedDate: PropTypes.string,
+  slug: PropTypes.string,
+  description: PropTypes.shape({
+    data: PropTypes.object,
+    content: PropTypes.arrayOf(
+      PropTypes.shape({
+        data: PropTypes.object,
+        content: PropTypes.arrayOf(
+          PropTypes.shape({
+            data: PropTypes.object,
+            marks: PropTypes.array,
+            value: PropTypes.string,
+          })
+        ),
+      })
+    ),
+    nodeType: PropTypes.string,
+  }),
+}
+
 const Blog = ({ data, pageContext }) => {
   const { currentPage, isFirstPage, isLastPage, totalPages } = pageContext
   const nextPage = `/blog/${String(currentPage + 1)}`
@@ -148,6 +171,14 @@ export const query = graphql`
 
 Blog.propTypes = {
   data: PropTypes.object,
+  pageContext: PropTypes.shape({
+    limit: PropTypes.number,
+    skip: PropTypes.number,
+    isFirstPage: PropTypes.bool,
+    isLastPage: PropTypes.bool,
+    currentPage: PropTypes.number,
+    totalPages: PropTypes.number,
+  }),
 }
 
 export default Blog
