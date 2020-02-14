@@ -2,8 +2,9 @@
 
 exports[`<SponsorSlider /> should render correctly 1`] = `
 <div
-  class="slider "
-  style="box-sizing: border-box; display: block; height: auto; position: relative; width: 100%;"
+  class="slider"
+  style="box-sizing: border-box; display: block; height: inherit; position: relative; width: 100%;"
+  tabindex="0"
 >
   <div
     class="slider-frame"
@@ -16,12 +17,11 @@ exports[`<SponsorSlider /> should render correctly 1`] = `
       <li
         class="slider-slide slide-visible"
         style="box-sizing: border-box; display: block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; opacity: 1; position: absolute; top: 0px; vertical-align: top; visibility: inherit; width: 0px;"
+        tabindex="-1"
       >
         <a
-          aria-hidden="false"
           href="https://www.google.com/"
           rel="noopener noreferrer"
-          tabindex="0"
           target="_blank"
         >
           static-query
@@ -30,12 +30,11 @@ exports[`<SponsorSlider /> should render correctly 1`] = `
       <li
         class="slider-slide slide-visible"
         style="box-sizing: border-box; display: block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; opacity: 1; position: absolute; top: 0px; vertical-align: top; visibility: inherit; width: 0px;"
+        tabindex="-1"
       >
         <a
-          aria-hidden="false"
           href="https://github.com/"
           rel="noopener noreferrer"
-          tabindex="0"
           target="_blank"
         >
           static-query
@@ -44,12 +43,11 @@ exports[`<SponsorSlider /> should render correctly 1`] = `
       <li
         class="slider-slide slide-visible"
         style="box-sizing: border-box; display: block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; opacity: 1; position: absolute; top: 0px; vertical-align: top; visibility: inherit; width: 0px;"
+        tabindex="-1"
       >
         <a
-          aria-hidden="false"
           href="https://repl.it"
           rel="noopener noreferrer"
-          tabindex="0"
           target="_blank"
         >
           static-query
@@ -58,12 +56,11 @@ exports[`<SponsorSlider /> should render correctly 1`] = `
       <li
         class="slider-slide slide-visible"
         style="box-sizing: border-box; display: block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; opacity: 1; position: absolute; top: 0px; vertical-align: top; visibility: inherit; width: 0px;"
+        tabindex="-1"
       >
         <a
-          aria-hidden="false"
           href="https://slack.com/"
           rel="noopener noreferrer"
-          tabindex="0"
           target="_blank"
         >
           static-query
@@ -72,12 +69,11 @@ exports[`<SponsorSlider /> should render correctly 1`] = `
       <li
         class="slider-slide slide-visible"
         style="box-sizing: border-box; display: block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; opacity: 1; position: absolute; top: 0px; vertical-align: top; visibility: inherit; width: 0px;"
+        tabindex="-1"
       >
         <a
-          aria-hidden="false"
           href="https://www.digitalocean.com/"
           rel="noopener noreferrer"
-          tabindex="0"
           target="_blank"
         >
           static-query
@@ -86,12 +82,11 @@ exports[`<SponsorSlider /> should render correctly 1`] = `
       <li
         class="slider-slide slide-visible"
         style="box-sizing: border-box; display: block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; opacity: 1; position: absolute; top: 0px; vertical-align: top; visibility: inherit; width: 0px;"
+        tabindex="-1"
       >
         <a
-          aria-hidden="false"
           href="https://frontendmasters.com/"
           rel="noopener noreferrer"
-          tabindex="0"
           target="_blank"
         >
           static-query
@@ -100,12 +95,11 @@ exports[`<SponsorSlider /> should render correctly 1`] = `
       <li
         class="slider-slide slide-visible"
         style="box-sizing: border-box; display: block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; opacity: 1; position: absolute; top: 0px; vertical-align: top; visibility: inherit; width: 0px;"
+        tabindex="-1"
       >
         <a
-          aria-hidden="false"
           href="https://corporate.comcast.com/company/nbcuniversal"
           rel="noopener noreferrer"
-          tabindex="0"
           target="_blank"
         >
           static-query
@@ -114,12 +108,11 @@ exports[`<SponsorSlider /> should render correctly 1`] = `
       <li
         class="slider-slide slide-visible"
         style="box-sizing: border-box; display: block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; opacity: 1; position: absolute; top: 0px; vertical-align: top; visibility: inherit; width: 0px;"
+        tabindex="-1"
       >
         <a
-          aria-hidden="false"
           href="https://www.contentful.com/"
           rel="noopener noreferrer"
-          tabindex="0"
           target="_blank"
         >
           static-query

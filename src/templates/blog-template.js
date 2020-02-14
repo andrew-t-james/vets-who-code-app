@@ -12,7 +12,7 @@ function BlogPost({ title, author, publishedDate, slug, description }) {
   return (
     <article className="post">
       <div className="row">
-        <div className="col-md-4" />
+        <div className="col-xs-2" />
 
         <div className="col-md-8">
           <div className="entry-meta">
@@ -39,7 +39,7 @@ function BlogPost({ title, author, publishedDate, slug, description }) {
 
               <time className="entry-date" dateTime="">
                 <span className="blog-list-icon">
-                  <Icon iconName="calendar" fill="#999999" />
+                  <Icon iconName="calendar-alt" fill="#999999" />
                 </span>
                 {publishedDate}
               </time>
@@ -77,7 +77,7 @@ const Blog = ({ data, pageContext }) => {
       <section id="blog-page" className="section  bg-default">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-sm-12">
+            <div className="col-xs-12">
               {data.allContentfulBlogPost.nodes.map(post => (
                 <BlogPost
                   key={post.id}
@@ -149,4 +149,5 @@ export const query = graphql`
 Blog.propTypes = {
   data: PropTypes.object,
 }
+
 export default Blog

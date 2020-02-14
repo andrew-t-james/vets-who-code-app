@@ -1,28 +1,41 @@
+/* eslint-disable react/display-name */
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import Layout from '../components/Layout'
 import readingTime from 'reading-time'
+import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
+import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 
 const BlogPost = ({ data }) => {
+  const Bold = ({ children }) => (
+    <span style={{ fontWeight: 'bold', color: 'inherit' }}>{children}</span>
+  )
+
+  const Text = ({ children }) => <p>{children}</p>
+
   const options = {
+    renderMark: {
+      [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+    },
     renderNode: {
-      // eslint-disable-next-line react/display-name
+      [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
       'embedded-asset-block': node => {
         const alt = node.data.target.fields.title['en-US']
         const url = node.data.target.fields.file['en-US'].url
-        return <img alt={alt} src={url} />
+        return <img alt={alt} src={url} className="img-responsive" />
       },
     },
   }
+
   const contentfulBlogContent = documentToReactComponents(
     data.contentfulBlogPost.body.json,
     options
   )
+
   let text = ''
   contentfulBlogContent.forEach(reactElement => (text += reactElement.props.children))
   const readingStats = readingTime(text)
@@ -30,24 +43,37 @@ const BlogPost = ({ data }) => {
   return (
     <Layout>
       <PageHeader title={data.contentfulBlogPost.title} link={'blog'} />
-      <h2>{data.contentfulBlogPost.title}</h2>
-      <h4>{data.contentfulBlogPost.author.authorName}</h4>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-          width: 150,
-        }}
-      >
-        <Image
-          alt={data.contentfulBlogPost.author.authorName}
-          fixed={data.contentfulBlogPost.author.authorImage.fixed}
-          style={{ width: 50, height: 50, borderRadius: 100 }}
-        />
-        <p>{readingStats.text}</p>
-      </div>
-      {contentfulBlogContent}
+      <section id="blog-page" className="section  bg-default">
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12">
+              <article className="post">
+                <div className="entry-content">
+                  <Image
+                    className="align-left"
+                    alt={data.contentfulBlogPost.author.authorName}
+                    fixed={data.contentfulBlogPost.author.authorImage.fixed}
+                    style={{ width: 50, height: 50, borderRadius: 100 }}
+                  />
+                  <div className="entry-meta">
+                    <h2 className="entry-title">{data.contentfulBlogPost.title}</h2>
+                    <div className="entry-meta-data" style={{ marginBottom: 0 }}>
+                      <span className="author">
+                        <p>
+                          by {data.contentfulBlogPost.author.authorName} <span>&middot;</span>{' '}
+                          {readingStats.text} <span>&middot;</span>{' '}
+                          {data.contentfulBlogPost.publishedDate}
+                        </p>
+                      </span>
+                    </div>
+                  </div>
+                  {contentfulBlogContent}
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }
@@ -65,6 +91,7 @@ export const query = graphql`
       }
       id
       slug
+      publishedDate(formatString: "MMMM Do, YYYY")
       title
       body {
         json

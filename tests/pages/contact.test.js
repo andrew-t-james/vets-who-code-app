@@ -3,13 +3,14 @@ import Contact from '../../src/pages/contact'
 import { render, fireEvent } from '@testing-library/react'
 
 describe('<Contact />', () => {
+  window.scrollTo = jest.fn()
+
   test('should submit subscription form', async () => {
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({
         ok: true,
       })
     )
-    window.scrollTo = jest.fn()
     const { container } = render(<Contact />)
     const applicationForm = container.querySelector('#s2do-form')
     const nameInput = container.querySelector('#InputName')

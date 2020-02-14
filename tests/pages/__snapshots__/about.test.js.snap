@@ -270,6 +270,7 @@ exports[`<About /> should render correctly 1`] = `
                       >
                         <svg
                           aria-hidden="true"
+                          class=""
                           data-icon="twitter"
                           data-prefix="fab"
                           focusable="false"
@@ -295,6 +296,7 @@ exports[`<About /> should render correctly 1`] = `
                       >
                         <svg
                           aria-hidden="true"
+                          class=""
                           data-icon="github"
                           data-prefix="fab"
                           focusable="false"
@@ -320,7 +322,8 @@ exports[`<About /> should render correctly 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          data-icon="linkedin"
+                          class=""
+                          data-icon="linkedin-in"
                           data-prefix="fab"
                           focusable="false"
                           height="20"
@@ -372,6 +375,7 @@ exports[`<About /> should render correctly 1`] = `
                       >
                         <svg
                           aria-hidden="true"
+                          class=""
                           data-icon="twitter"
                           data-prefix="fab"
                           focusable="false"
@@ -397,6 +401,7 @@ exports[`<About /> should render correctly 1`] = `
                       >
                         <svg
                           aria-hidden="true"
+                          class=""
                           data-icon="behance"
                           data-prefix="fab"
                           focusable="false"
@@ -422,7 +427,8 @@ exports[`<About /> should render correctly 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          data-icon="linkedin"
+                          class=""
+                          data-icon="linkedin-in"
                           data-prefix="fab"
                           focusable="false"
                           height="20"
@@ -474,6 +480,7 @@ exports[`<About /> should render correctly 1`] = `
                       >
                         <svg
                           aria-hidden="true"
+                          class=""
                           data-icon="twitter"
                           data-prefix="fab"
                           focusable="false"
@@ -499,6 +506,7 @@ exports[`<About /> should render correctly 1`] = `
                       >
                         <svg
                           aria-hidden="true"
+                          class=""
                           data-icon="github"
                           data-prefix="fab"
                           focusable="false"
@@ -524,7 +532,8 @@ exports[`<About /> should render correctly 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          data-icon="linkedin"
+                          class=""
+                          data-icon="linkedin-in"
                           data-prefix="fab"
                           focusable="false"
                           height="20"
@@ -599,7 +608,8 @@ exports[`<About /> should render correctly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        data-icon="facebook"
+                        class=""
+                        data-icon="facebook-f"
                         data-prefix="fab"
                         focusable="false"
                         height="14"
@@ -624,6 +634,7 @@ exports[`<About /> should render correctly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class=""
                         data-icon="twitter"
                         data-prefix="fab"
                         focusable="false"
@@ -649,6 +660,7 @@ exports[`<About /> should render correctly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class=""
                         data-icon="codepen"
                         data-prefix="fab"
                         focusable="false"
@@ -674,6 +686,7 @@ exports[`<About /> should render correctly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class=""
                         data-icon="instagram"
                         data-prefix="fab"
                         focusable="false"
@@ -699,7 +712,8 @@ exports[`<About /> should render correctly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        data-icon="linkedin"
+                        class=""
+                        data-icon="linkedin-in"
                         data-prefix="fab"
                         focusable="false"
                         height="14"
@@ -724,6 +738,7 @@ exports[`<About /> should render correctly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
+                        class=""
                         data-icon="github"
                         data-prefix="fab"
                         focusable="false"
