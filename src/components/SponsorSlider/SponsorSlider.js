@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import FluidImage from '../FluidImage'
+import Image from 'next/image'
 import Carousel from 'nuka-carousel'
 import { ThemeContext } from '../../store/ThemeProvider'
 import { FaSlack, FaGoogle, FaGithub } from 'react-icons/fa'
@@ -16,9 +16,11 @@ const baseSettlings = {
 }
 
 const alignmentStyles = {
+  position: 'relative',
+  overflow: 'hidden',
   height: 60,
   width: 60,
-  margin: '0 auto',
+  margin: '0px auto',
 }
 
 const elements = [
@@ -92,16 +94,23 @@ function SponsorSlider() {
   const lightElements = () => {
     return elements.map(data => {
       return (
-        <a
-          key={data.title}
-          href={data.href}
-          aria-label={data.label}
-          title={data.title}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FluidImage fileName={data.lightElement} alt={data.title} style={alignmentStyles} />
-        </a>
+        <div key={data.title} style={{ textAlign: 'center' }}>
+          <a
+            href={data.href}
+            aria-label={data.label}
+            title={data.title}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={`/images/supporters/${data.lightElement}`}
+              alt={data.title}
+              style={alignmentStyles}
+              height={alignmentStyles.height}
+              width={alignmentStyles.width}
+            />
+          </a>
+        </div>
       )
     })
   }

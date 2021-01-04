@@ -73,4 +73,6 @@ public/
 coverage
 
 #env
-.env
+.env,
+ # next
+.next

@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react'
 
 import PageHeader from '../components/PageHeader'
-import '../assets/css/custom.css'
 import vwcGIF from '../images/vwc.gif'
 import facebookVideo from '../video/vwc-facebook-reel.mp4'
 

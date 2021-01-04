@@ -1,4 +1,4 @@
-import FluidImage from '../components/FluidImage'
+import Image from 'next/image'
 import PageHeader from '../components/PageHeader'
 
 function Testimonial() {
@@ -20,11 +20,7 @@ function Testimonial() {
             <div className="col-md-12">
               <div className="cause_section_content">
                 <div className="testimonial-row">
-                  <FluidImage
-                    fileName="schuster.jpg"
-                    alt="Schuster Braun"
-                    style={{ height: 200, width: 200 }}
-                  />
+                  <Image src="/images/schuster.jpg" alt="Schuster Braun" height="200" width="200" />
                   <blockquote className="testimonial-text">
                     <p>
                       &quot;#VetsWhoCode on paper is a web development boot camp. In my opinion it
@@ -35,11 +31,7 @@ function Testimonial() {
                   </blockquote>
                 </div>
                 <div className="testimonial-row">
-                  <FluidImage
-                    fileName="profile.png"
-                    alt="John Garcia"
-                    style={{ height: 200, width: 200 }}
-                  />
+                  <Image src="/images/profile.png" alt="John Garcia" height="200" width="200" />
                   <blockquote className="testimonial-text">
                     <p>
                       &quot;VWC helped me gain the technical knowledge I needed in order to get the
@@ -51,11 +43,7 @@ function Testimonial() {
                   </blockquote>
                 </div>
                 <div className="testimonial-row">
-                  <FluidImage
-                    fileName="carla-kroll.jpg"
-                    alt="Carla Kroll"
-                    style={{ height: 200, width: 200 }}
-                  />
+                  <Image src="/images/carla-kroll.jpg" alt="Carla Kroll" height="200" width="200" />
                   <blockquote className="testimonial-text">
                     <p>
                       &quot;The course was great! I laughed, I learned, I got mad, I got
@@ -69,11 +57,7 @@ function Testimonial() {
                   </blockquote>
                 </div>
                 <div className="testimonial-row">
-                  <FluidImage
-                    fileName="ozzie.png"
-                    alt="Osvaldo Vargas"
-                    style={{ height: 200, width: 200 }}
-                  />
+                  <Image src="/images/ozzie.png" alt="Osvaldo Vargas" height="200" width="200" />
                   <blockquote className="testimonial-text">
                     <p>
                       &quot;During my transition, I have signed up for and utilized services from
@@ -90,10 +74,12 @@ function Testimonial() {
                   </blockquote>
                 </div>
                 <div className="testimonial-row">
-                  <FluidImage
-                    fileName="jeff-martin.JPG"
+                  <Image
+                    src="/images/jeff-martin.jpg"
                     alt="Jeff Martin"
-                    style={{ height: 200, width: 200 }}
+                    layout="intrinsic"
+                    height="200"
+                    width="200"
                   />
                   <blockquote className="testimonial-text">
                     <p>

@@ -22,6 +22,10 @@
     "gatsby-transformer-sharp": "2.5.19",
     "generate": "0.14.0",
     "intersection-observer": "0.11.0",
+    "next": "latest",
+    "next-compose-plugins": "2.2.1",
+    "next-images": "1.6.2",
+    "next-videos": "1.4.0",
     "nuka-carousel": "4.7.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
@@ -37,14 +41,16 @@
     "slick-carousel": "1.8.1",
     "typeface-lato": "1.1.13",
     "typeface-roboto-slab": "1.1.13",
-    "typeface-source-sans-pro": "1.1.13"
+    "typeface-source-sans-pro": "1.1.13",
+    "@contentful/rich-text-react-renderer": "14.1.1",
+    "gatsby-source-contentful": "3.0.3"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build:old": "gatsby build",
     "build:prod": "yarn enable:contentful && yarn && gatsby build",
     "clean": "gatsby clean",
     "preload-fonts": "gatsby-preload-fonts",
@@ -58,7 +64,12 @@
     "test:coverage": "jest --env=jsdom --coverage",
     "test:watch": "jest --watch",
     "view:coverage": "open coverage/lcov-report/index.html",
-    "yarn:install": "yarn"
+    "yarn:install": "yarn",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export",
+    "prod:build": "NODE_ENV=production npm run build"
   },
   "devDependencies": {
     "@babel/core": "7.12.3",

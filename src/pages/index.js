@@ -1,29 +1,11 @@
-import { useEffect } from 'react'
-import { Link } from 'gatsby'
+import Link from 'next/link'
+import Image from 'next/image'
 import SponsorSlider from '../components/SponsorSlider'
 import Countdown from '../components/Countdown'
 import Header from '../components/Header'
-import FluidImage from '../components/FluidImage'
 import { SubscribeForm } from '../components/Forms'
 
 function IndexPage() {
-  useEffect(() => {
-    let current = true
-    if (current) {
-      onClientEntry()
-    }
-    return () => (current = false)
-  }, [])
-
-  const onClientEntry = () => {
-    // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
-    if (window !== undefined) {
-      if (window.IntersectionObserver === undefined) {
-        require('intersection-observer')
-      }
-    }
-  }
-
   return (
     <>
       <Header />
@@ -31,7 +13,7 @@ function IndexPage() {
         <div className="container-fluid">
           <div className="row no-gutter">
             <div className="col-md-4">
-              <Link to="/donate">
+              <Link href="/donate">
                 <div
                   className="fluid-grid first-grid text-center"
                   style={{ backgroundColor: '#031228' }}
@@ -42,7 +24,7 @@ function IndexPage() {
               </Link>
             </div>
             <div className="col-md-4">
-              <Link to="/apply">
+              <Link href="/apply">
                 <div
                   className="fluid-grid second-grid text-center"
                   style={{ backgroundColor: '#0f356d' }}
@@ -53,7 +35,7 @@ function IndexPage() {
               </Link>
             </div>
             <div className="col-md-4">
-              <Link to="/mentor">
+              <Link href="/mentor">
                 <div
                   className="fluid-grid third-grid text-center"
                   style={{ backgroundColor: '#123f83' }}
@@ -73,10 +55,13 @@ function IndexPage() {
         <div className="container">
           <div className="row bg-dark">
             <div className="col-md-5 col-sm-12 no_left_pad no_right_pad">
-              <FluidImage
-                fileName="jerome-jsconf.jpg"
+              <Image
+                src="/images/jerome-jsconf.jpg"
                 className="img-responsive"
                 alt="Schuster and Jerome"
+                layout="responsive"
+                height={1000}
+                width={1000}
               />
             </div>
             <div className="col-md-7 col-sm-12 our_story_content text-center">
@@ -125,8 +110,10 @@ function IndexPage() {
             </div>
             <div className="col-sm-6 event_counter_container text-center">
               <Countdown nextClass="March 01, 2021" />
-              <Link className="btn btn-charity-default" to="/apply">
-                Apply
+              <Link className="btn btn-charity-default" href="/apply">
+                <a className="btn btn-charity-default" href="/apply">
+                  Apply
+                </a>
               </Link>
             </div>
           </div>
@@ -159,7 +146,6 @@ function IndexPage() {
           </div>
           <div className="row">
             <div className="col-sm-12 cause_content text-center" style={{ marginBottom: 40 }}>
-              {/* eslint-disable-next-line max-len */}
               <h3 id="cause-title">Thank You For Working With #VetsWhoCode!</h3>
               <hr />
               <h3 className="subtitle">

@@ -1,4 +1,4 @@
-import FluidImage from '../components/FluidImage'
+import Image from 'next/image'
 import PageHeader from '../components/PageHeader'
 
 function Donate() {
@@ -47,11 +47,7 @@ function Donate() {
             <div className="col-md-12">
               <div className="cause_section_content">
                 <div className="testimonial-row">
-                  <FluidImage
-                    fileName="profile.png"
-                    alt="John Garcia"
-                    style={{ height: 200, width: 200 }}
-                  />
+                  <Image src="/images/profile.png" alt="John Garcia" height={200} width={200} />
                   <blockquote className="testimonial-text">
                     <p>
                       &quot;VWC helped me gain the technical knowledge I needed in order to get the

@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
-import Link from 'gatsby-link'
-import FluidImage from '../FluidImage'
+import Link from 'next/link'
+import Image from 'next/image'
 import Toggle from '../Toggle'
-import './nav.css'
 
 function Nav() {
   const navRef = useRef()
@@ -56,13 +55,17 @@ function Nav() {
             itemType="https://schema.org/Organization"
           >
             <span className="sr-only">#VetsWhoCode</span>
-            <Link to="/" id="navbar-brand">
-              <FluidImage
-                fileName="hashflag_white.jpg"
-                alt="#VetsWhoCode Logo"
-                className="logo_holder"
-              />
-              <div className="homeLink">VetsWhoCode</div>
+            <Link href="/">
+              <a id="navbar-brand">
+                <Image
+                  src="/images/hashflag_white.jpg"
+                  alt="#VetsWhoCode Logo"
+                  className="logo_holder"
+                  height={40}
+                  width={40}
+                />
+                <div className="homeLink">VetsWhoCode</div>
+              </a>
             </Link>
           </div>
           <button
@@ -90,58 +93,80 @@ function Nav() {
             onClick={() => setIsNavOpen(false)}
           >
             <li role="menuitem" className="nav">
-              <span>
-                <Toggle size={30} />
-              </span>
+              <a>
+                <span>
+                  <Toggle size={30} />
+                </span>
+              </a>
             </li>
             <li role="menuitem" className="nav">
-              <Link to="/">
-                <span>Home</span>
+              <Link href="/">
+                <a>
+                  <span>Home</span>
+                </a>
               </Link>
             </li>
             <li role="menuitem" className="nav">
-              <Link to="/about">
-                <span>About</span>
+              <Link href="/about">
+                <a>
+                  <span>About</span>
+                </a>
               </Link>
             </li>
             <li role="menuitem" className="nav">
-              <Link to="/board">
-                <span>Board</span>
+              <Link href="/board">
+                <a>
+                  <span>Board</span>
+                </a>
               </Link>
             </li>
             <li role="menuitem" className="nav">
-              <Link to="/testimonials">
-                <span>Testimonials</span>
+              <Link href="/testimonials">
+                <a>
+                  <span>Testimonials</span>
+                </a>
               </Link>
             </li>
             <li role="menuitem" className="nav">
-              <Link to="/syllabus">
-                <span>Syllabus</span>
+              <Link href="/syllabus">
+                <a>
+                  <span>Syllabus</span>
+                </a>
               </Link>
             </li>
             <li role="menuitem" className="nav">
-              <Link to="/mentor">
-                <span>Mentor</span>
+              <Link href="/mentor">
+                <a>
+                  <span>Mentor</span>
+                </a>
               </Link>
             </li>
             <li role="menuitem" className="nav">
-              <Link to="/apply">
-                <span>Apply</span>
+              <Link href="/apply">
+                <a>
+                  <span>Apply</span>
+                </a>
               </Link>
             </li>
             <li role="menuitem" className="nav">
-              <Link to="/contact">
-                <span>Contact</span>
+              <Link href="/contact">
+                <a>
+                  <span>Contact</span>
+                </a>
               </Link>
             </li>
             <li role="menuitem" className="nav">
-              <Link to="/blog">
-                <span>Blog</span>
+              <Link href="/blog">
+                <a>
+                  <span>Blog</span>
+                </a>
               </Link>
             </li>
             <li role="menuitem" className="donate">
-              <Link to="/donate">
-                <span>Donate</span>
+              <Link href="/donate">
+                <a>
+                  <span>Donate</span>
+                </a>
               </Link>
             </li>
           </ul>

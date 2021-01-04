@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { FormAlert, onSubmitError, onSubmitSuccess } from '../'
 
-import './applyform.css'
+// import './applyform.css'
 
 function ApplyForm() {
   const [loading, setLoading] = useState(false)

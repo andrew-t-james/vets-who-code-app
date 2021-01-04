@@ -1,4 +1,4 @@
-import Link from 'gatsby-link'
+import Link from 'next/link'
 import {
   FaFacebookF,
   FaTwitter,
@@ -18,7 +18,7 @@ function Footer() {
           <div className="row">
             <div className="col-sm-12 text-center">
               <h2>Help Us Teach More Veterans How To Code &nbsp;</h2>
-              <Link to="/donate" className="btn btn-charity-default">
+              <Link href="/donate" className="btn btn-charity-default">
                 donate
               </Link>
             </div>
@@ -79,19 +79,19 @@ function Footer() {
                     <div className="widgets-content">
                       <ul className="widgets-list">
                         <li>
-                          <Link to="/">Home</Link>
+                          <Link href="/">Home</Link>
                         </li>
                         <li>
-                          <Link to="/about">About</Link>
+                          <Link href="/about">About</Link>
                         </li>
                         <li>
-                          <Link to="/board">Board</Link>
+                          <Link href="/board">Board</Link>
                         </li>
                         <li>
-                          <Link to="/syllabus">Syllabus</Link>
+                          <Link href="/syllabus">Syllabus</Link>
                         </li>
                         <li>
-                          <Link to="/testimonials">Testimonials</Link>
+                          <Link href="/testimonials">Testimonials</Link>
                         </li>
                       </ul>
                     </div>
@@ -100,19 +100,19 @@ function Footer() {
                     <div className="widgets-content">
                       <ul className="widgets-list">
                         <li>
-                          <Link to="/mentor">Mentor</Link>
+                          <Link href="/mentor">Mentor</Link>
                         </li>
                         <li>
-                          <Link to="/apply">Apply</Link>
+                          <Link href="/apply">Apply</Link>
                         </li>
                         <li>
-                          <Link to="/donate">Donate</Link>
+                          <Link href="/donate">Donate</Link>
                         </li>
                         <li>
-                          <Link to="/contact">Contact Us</Link>
+                          <Link href="/contact">Contact Us</Link>
                         </li>
                         <li>
-                          <Link to="/blog">
+                          <Link href="/blog">
                             <span>Blog</span>
                           </Link>
                         </li>
