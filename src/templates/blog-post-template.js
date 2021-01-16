@@ -8,6 +8,8 @@ import { options } from './blog-helpers'
 import { useScript } from '../hooks'
 
 const BlogPost = ({ pageContext }) => {
+  {
+  }
   const { contentfulData } = pageContext
   const { data } = contentfulData
   const src = 'https://assets.codepen.io/assets/embed/ei.js'

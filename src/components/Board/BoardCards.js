@@ -1,30 +1,23 @@
 import PropTypes from 'prop-types'
-import Image from 'gatsby-image'
+import Image from 'next/image'
 import { FaTwitter, FaLinkedinIn } from 'react-icons/fa'
-import './boardCards.css'
 
-function BoardCards({ boardMembersList }) {
-  const sortedBoardMembers = boardMembersList.sort((a, b) => {
-    const aLastName = a.node.lastName
-    const bLastName = b.node.lastName
-    if (aLastName < bLastName) {
-      return -1
-    }
-    if (aLastName > bLastName) {
-      return 1
-    }
-    return 0
-  })
-
+function BoardCards({ boardMemberCollection }) {
   return (
     <>
-      {sortedBoardMembers.map(({ node }) => {
+      {boardMemberCollection.map(node => {
         return (
-          <div key={node.id} className="col-md-6 col-lg-3 col-sm-6">
+          <div key={`${node.firstName}-${node.lastName}`} className="col-md-6 col-lg-3 col-sm-6">
             <div className="card-box text-center">
               <div className="upper">
                 <div className="user-pic">
-                  <Image fluid={node.image.fluid} alt={node.name} className="img-fluid" />
+                  <Image
+                    src={node.image.url}
+                    alt={`${node.firstName} ${node.lastName}`}
+                    className="img-fluid"
+                    width={node.image.width}
+                    height={node.image.height}
+                  />
                 </div>
                 <h1>
                   {node.firstName} {node.lastName}
@@ -32,7 +25,7 @@ function BoardCards({ boardMembersList }) {
                 <h2>{node.work}</h2>
               </div>
               <div className="bio">
-                <p className="board-bio">{node?.bio?.bio}</p>
+                <p className="board-bio">{node?.bio}</p>
               </div>
               <div className="board-links">
                 {node.linkedin && (
@@ -65,22 +58,18 @@ function BoardCards({ boardMembersList }) {
 }
 
 BoardCards.propTypes = {
-  boardMembersList: PropTypes.arrayOf(
+  boardMemberCollection: PropTypes.arrayOf(
     PropTypes.shape({
-      node: PropTypes.shape({
-        id: PropTypes.string,
-        bio: PropTypes.shape({ bio: PropTypes.string }),
-        linkedin: PropTypes.string,
-        twitter: PropTypes.string,
-        work: PropTypes.string,
-        firstName: PropTypes.string,
-        lastName: PropTypes.string,
-        fluid: PropTypes.shape({
-          srcSet: PropTypes.string,
-          src: PropTypes.string,
-          sizes: PropTypes.string,
-          aspectRatio: PropTypes.number,
-        }),
+      bio: PropTypes.String,
+      linkedin: PropTypes.string,
+      twitter: PropTypes.string,
+      work: PropTypes.string,
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      image: PropTypes.shape({
+        src: PropTypes.string,
+        width: PropTypes.number,
+        height: PropTypes.number,
       }),
     })
   ),

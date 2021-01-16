@@ -32,12 +32,31 @@ exports[`<Layout /> should render correctly 1`] = `
               #VetsWhoCode
             </span>
             <a
-              aria-current="page"
-              class=""
               href="/"
               id="navbar-brand"
             >
-              static-query
+              <div
+                style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+              >
+                <div
+                  style="box-sizing: border-box; display: block; max-width: 100%;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    role="presentation"
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                    style="max-width: 100%; display: block;"
+                  />
+                </div>
+                <img
+                  alt="#VetsWhoCode Logo"
+                  class="logo_holder"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+              </div>
               <div
                 class="homeLink"
               >
@@ -81,15 +100,15 @@ exports[`<Layout /> should render correctly 1`] = `
               class="nav"
               role="menuitem"
             >
-              <span />
+              <a>
+                <span />
+              </a>
             </li>
             <li
               class="nav"
               role="menuitem"
             >
               <a
-                aria-current="page"
-                class=""
                 href="/"
               >
                 <span>
@@ -186,7 +205,7 @@ exports[`<Layout /> should render correctly 1`] = `
               role="menuitem"
             >
               <a
-                href="/blog"
+                href="/blog/1"
               >
                 <span>
                   Blog
@@ -227,7 +246,6 @@ exports[`<Layout /> should render correctly 1`] = `
                 Help Us Teach More Veterans How To Code  
               </h2>
               <a
-                class="btn btn-charity-default"
                 href="/donate"
               >
                 donate
@@ -426,8 +444,6 @@ exports[`<Layout /> should render correctly 1`] = `
                       >
                         <li>
                           <a
-                            aria-current="page"
-                            class=""
                             href="/"
                           >
                             Home
@@ -502,13 +518,9 @@ exports[`<Layout /> should render correctly 1`] = `
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="/blog"
-                          >
-                            <span>
-                              Blog
-                            </span>
-                          </a>
+                          <span>
+                            Blog
+                          </span>
                         </li>
                       </ul>
                     </div>

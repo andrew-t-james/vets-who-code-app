@@ -156,7 +156,7 @@ function Nav() {
               </Link>
             </li>
             <li role="menuitem" className="nav">
-              <Link href="/blog">
+              <Link href="/blog/1">
                 <a>
                   <span>Blog</span>
                 </a>
