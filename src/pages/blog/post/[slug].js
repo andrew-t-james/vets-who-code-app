@@ -69,9 +69,6 @@ async function getBlogPost() {
         blogPostCollection {
           items {
             slug
-            sys {
-              id
-            }
           }
         }
       }
@@ -80,7 +77,6 @@ async function getBlogPost() {
   const paths = blogPostIdList.blogPostCollection.items.map(p => ({
     params: {
       slug: p.slug,
-      id: p.sys.id,
     },
   }))
 

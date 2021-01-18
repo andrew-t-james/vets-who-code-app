@@ -75,6 +75,12 @@ BlogPostLink.propTypes = {
   author: PropTypes.string,
   publishedDate: PropTypes.string,
   slug: PropTypes.string,
+  featureImage: PropTypes.shape({
+    url: PropTypes.string,
+    height: PropTypes.number,
+    width: PropTypes.number,
+    title: PropTypes.string,
+  }),
   description: PropTypes.shape({
     data: PropTypes.object,
     content: PropTypes.arrayOf(
@@ -89,28 +95,10 @@ BlogPostLink.propTypes = {
         ),
       })
     ),
-    nodeType: PropTypes.string,
-  }),
-  featureImage: PropTypes.shape({
-    fluid: PropTypes.shape({
-      srcSet: PropTypes.string,
-      src: PropTypes.string,
-      sizes: PropTypes.string,
-      aspectRatio: PropTypes.number,
-    }),
-    title: PropTypes.string,
   }),
 }
 
-const Blog = ({
-  currentPage,
-  prevPage,
-  nextPage,
-  totalPages,
-  isFirstPage,
-  isLastPage,
-  blogPostCollection,
-}) => {
+const Blog = ({ totalPages, isFirstPage, isLastPage, blogPostCollection }) => {
   const { items } = blogPostCollection
 
   return (
@@ -187,6 +175,7 @@ async function getBlogThangs() {
       }
   `)
 
+  console.log('response:', response)
   const postPerPage = 3
   const { total } = response.blogPostCollection
   const numberOfPages = Math.ceil(total / postPerPage)
@@ -264,6 +253,7 @@ export async function getStaticProps(ctx) {
 }
 
 Blog.propTypes = {
+  blogPostCollection: PropTypes.array,
   limit: PropTypes.number,
   skip: PropTypes.number,
   isFirstPage: PropTypes.bool,
