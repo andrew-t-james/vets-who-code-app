@@ -175,7 +175,6 @@ async function getBlogThangs() {
       }
   `)
 
-  console.log('response:', response)
   const postPerPage = 3
   const { total } = response.blogPostCollection
   const numberOfPages = Math.ceil(total / postPerPage)
