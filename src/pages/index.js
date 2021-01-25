@@ -5,6 +5,8 @@ import Countdown from '../components/Countdown'
 import Header from '../components/Header'
 import { SubscribeForm } from '../components/Forms'
 
+import jsConf from '../images/jerome-jsconf.jpg'
+
 function IndexPage() {
   return (
     <>
@@ -56,7 +58,7 @@ function IndexPage() {
           <div className="row bg-dark">
             <div className="col-md-5 col-sm-12 no_left_pad no_right_pad">
               <Image
-                src="/images/jerome-jsconf.jpg"
+                src={jsConf}
                 className="img-responsive"
                 alt="Schuster and Jerome"
                 layout="responsive"
