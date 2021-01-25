@@ -264,14 +264,6 @@ export async function getStaticProps(ctx) {
     }
   `)
 
-  console.log({
-    blogPostCollection,
-    nextPage,
-    prevPage,
-    totalPages,
-    isFirstPage,
-    isLastPage,
-  })
   return {
     props: {
       blogPostCollection,

@@ -9,4 +9,4 @@ const config = {
   // target: 'serverless',
 }
 
-module.exports = withPlugins([withImages, withVideos], config)
+module.exports = withPlugins([withVideos, withImages], config)
