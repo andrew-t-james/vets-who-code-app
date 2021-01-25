@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Toggle from '../Toggle'
 
+import hashFlag from '../../images/hashflag_white.jpg'
+
 function Nav() {
   const navRef = useRef()
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -58,7 +60,7 @@ function Nav() {
             <Link href="/">
               <a id="navbar-brand">
                 <Image
-                  src="/images/hashflag_white.jpg"
+                  src={hashFlag}
                   alt="#VetsWhoCode Logo"
                   className="logo_holder"
                   height={40}

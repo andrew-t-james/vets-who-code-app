@@ -6,6 +6,14 @@ import { FaSlack, FaGoogle, FaGithub } from 'react-icons/fa'
 import { SiReplDotIt } from 'react-icons/si'
 import { Contentful, Fem, Netlify } from '../../icons'
 
+import google from '../../images/supporters/google.png'
+import github from '../../images/supporters/github.png'
+import replIt from '../../images/supporters/repl.it.png'
+import slack from '../../images/supporters/slack.png'
+import fem from '../../images/supporters/fem.png'
+import contentful from '../../images/supporters/contentful.png'
+import netlify from '../../images/supporters/netlify.png'
+
 const baseSettlings = {
   autoplay: true,
   enableKeyboardControls: true,
@@ -28,49 +36,49 @@ const elements = [
     href: 'https://www.google.com/',
     label: 'Link to Google',
     title: 'Google',
-    lightElement: 'google.png',
+    lightElement: google,
     darkElement: <FaGoogle size={60} color="#ffffff" />,
   },
   {
     href: 'https://github.com/',
     label: 'Link to Github',
     title: 'GitHub',
-    lightElement: 'github.png',
+    lightElement: github,
     darkElement: <FaGithub size={60} color="#ffffff" />,
   },
   {
     href: 'https://repl.it',
     label: 'Link to Replit ',
     title: 'Repl.it',
-    lightElement: 'repl.it.png',
+    lightElement: replIt,
     darkElement: <SiReplDotIt size={60} color="#ffffff" />,
   },
   {
     href: 'https://slack.com/',
     label: 'Link to Slack',
     title: 'Slack',
-    lightElement: 'slack.png',
+    lightElement: slack,
     darkElement: <FaSlack size={60} color="#ffffff" />,
   },
   {
     href: 'https://frontendmasters.com/',
     label: 'Link to Front End Masters',
     title: 'Front End Masters',
-    lightElement: 'fem.png',
+    lightElement: fem,
     darkElement: <Fem size={`60`} color="#ffffff" />,
   },
   {
     href: 'https://www.contentful.com/',
     label: 'Link to Contentful',
     title: 'Contentful',
-    lightElement: 'contentful.png',
+    lightElement: contentful,
     darkElement: <Contentful size={`60`} color="#091f40" />,
   },
   {
     href: 'https://www.netlify.com/',
     label: 'Link to Netlify',
     title: 'Netlify',
-    lightElement: 'netlify.png',
+    lightElement: netlify,
     darkElement: <Netlify size={`60`} color="#ffffff" />,
   },
 ]
@@ -103,7 +111,8 @@ function SponsorSlider() {
             rel="noopener noreferrer"
           >
             <Image
-              src={`/images/supporters/${data.lightElement}`}
+              src={data.lightElement}
+              //src={`/images/supporters/${data.lightElement}`}
               alt={data.title}
               style={alignmentStyles}
               height={alignmentStyles.height}

@@ -1,6 +1,12 @@
 import Image from 'next/image'
 import PageHeader from '../components/PageHeader'
 
+import schusterProfile from '../images/schuster.jpg'
+import johnProfile from '../images/profile.png'
+import carlaProfile from '../images/carla-kroll.jpg'
+import ozzieProfile from '../images/ozzie.png'
+import jeffProfile from '../images/jeff-martin.jpg'
+
 function Testimonial() {
   return (
     <>
@@ -20,7 +26,7 @@ function Testimonial() {
             <div className="col-md-12">
               <div className="cause_section_content">
                 <div className="testimonial-row">
-                  <Image src="/images/schuster.jpg" alt="Schuster Braun" height="200" width="200" />
+                  <Image src={schusterProfile} alt="Schuster Braun" height="200" width="200" />
                   <blockquote className="testimonial-text">
                     <p>
                       &quot;#VetsWhoCode on paper is a web development boot camp. In my opinion it
@@ -31,7 +37,7 @@ function Testimonial() {
                   </blockquote>
                 </div>
                 <div className="testimonial-row">
-                  <Image src="/images/profile.png" alt="John Garcia" height="200" width="200" />
+                  <Image src={johnProfile} alt="John Garcia" height="200" width="200" />
                   <blockquote className="testimonial-text">
                     <p>
                       &quot;VWC helped me gain the technical knowledge I needed in order to get the
@@ -43,7 +49,7 @@ function Testimonial() {
                   </blockquote>
                 </div>
                 <div className="testimonial-row">
-                  <Image src="/images/carla-kroll.jpg" alt="Carla Kroll" height="200" width="200" />
+                  <Image src={carlaProfile} alt="Carla Kroll" height="200" width="200" />
                   <blockquote className="testimonial-text">
                     <p>
                       &quot;The course was great! I laughed, I learned, I got mad, I got
@@ -57,7 +63,7 @@ function Testimonial() {
                   </blockquote>
                 </div>
                 <div className="testimonial-row">
-                  <Image src="/images/ozzie.png" alt="Osvaldo Vargas" height="200" width="200" />
+                  <Image src={ozzieProfile} alt="Osvaldo Vargas" height="200" width="200" />
                   <blockquote className="testimonial-text">
                     <p>
                       &quot;During my transition, I have signed up for and utilized services from
@@ -75,7 +81,7 @@ function Testimonial() {
                 </div>
                 <div className="testimonial-row">
                   <Image
-                    src="/images/jeff-martin.jpg"
+                    src={jeffProfile}
                     alt="Jeff Martin"
                     layout="intrinsic"
                     height="200"

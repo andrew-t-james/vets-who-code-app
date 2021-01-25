@@ -2,10 +2,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Typed from 'react-typed'
 
+import codeImage from '../../images/code.jpg'
+
 function Header() {
   return (
     <section className="site-header flexslider classic overlay main-overlay grey">
-      <Image layout="fill" src="/images/code.jpg" style={{ height: '80vh' }} />
+      <Image layout="fill" src={codeImage} style={{ height: '80vh' }} />
       <div className="header-classic wrapper-table">
         <div className="valign-center">
           <div className="container">
