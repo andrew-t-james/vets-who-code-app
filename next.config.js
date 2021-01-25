@@ -7,7 +7,6 @@ const config = {
     domains: ['images.ctfassets.net'],
   },
   target: 'serverless',
-  distDir: 'build',
 }
 
 module.exports = withPlugins([withImages, withVideos], config)
