@@ -123,7 +123,7 @@ BlogPostLink.propTypes = {
   }),
 }
 
-const Blog = ({ totalPages, isFirstPage, isLastPage, blogPostCollection }) => {
+const Blog = ({ totalPages, isFirstPage, isLastPage, blogPostCollection, nextPage, prevPage }) => {
   const { items } = blogPostCollection
 
   return (
@@ -264,6 +264,14 @@ export async function getStaticProps(ctx) {
     }
   `)
 
+  console.log({
+    blogPostCollection,
+    nextPage,
+    prevPage,
+    totalPages,
+    isFirstPage,
+    isLastPage,
+  })
   return {
     props: {
       blogPostCollection,
@@ -284,6 +292,8 @@ Blog.propTypes = {
   isLastPage: PropTypes.bool,
   currentPage: PropTypes.number,
   totalPages: PropTypes.number,
+  nextPage: PropTypes.string,
+  prevPage: PropTypes.string,
 }
 
 export default Blog
