@@ -7,9 +7,34 @@ import { FaRegCalendarAlt } from 'react-icons/fa'
 import PageHeader from '../../components/PageHeader'
 import { fetchContent } from '../../utilities/conentful'
 
-function BlogPostLink({ title, author, publishedDate, slug, description, featureImage }) {
-  const excerpt = description.content[0].content[0].value
+/**
+ * findDescription
+ * finds the first child of a blog post body
+ * that is of Type String and is not ""
+ *
+ * @param blog post body in the form of JSON
+ * @param blog.content Array
+ * @param blog.data Object
+ * @param blog.nodType String
+ * @param  data
+ *
+ * @return String
+ */
+function findDescription(data) {
+  let description = null
 
+  for (let child of data.content) {
+    if (child?.content[0]?.value) {
+      description = child.content[0].value
+      return description
+    }
+  }
+
+  return description
+}
+
+function BlogPostLink({ title, author, publishedDate, slug, description, featureImage }) {
+  const excerpt = findDescription(description)
   return (
     <article className="post after">
       <div className="row">
