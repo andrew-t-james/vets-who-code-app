@@ -79,7 +79,7 @@ function BlogPostLink({ title, author, publishedDate, slug, description, feature
 
           <div className="entry-meta clearfix">
             <Link
-              href={`/blog/${slug}`}
+              href={`/blog/page/${slug}`}
               className="btn btn-charity-default btn-read-more"
               hidefocus="true"
               style={{ outline: 'none' }}
