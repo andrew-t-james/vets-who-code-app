@@ -1,5 +1,5 @@
 [build]
-  command   = "yarn run build"
+  command   = "yarn run export"
   functions = "out_functions"
   publish   = "out_publish"
 [[plugins]]

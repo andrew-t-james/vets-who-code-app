@@ -43,6 +43,7 @@
     "test:watch": "jest --watch",
     "view:coverage": "open coverage/lcov-report/index.html",
     "dev": "next",
+    "export": "next build && next export",
     "build": "next build"
   },
   "devDependencies": {
