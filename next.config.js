@@ -28,6 +28,7 @@ const config = {
       },
     ],
   ],
+  target: 'serverless',
 }
 
 module.exports = withPlugins([withVideos, withImages], config)
