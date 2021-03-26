@@ -17,7 +17,6 @@
     "next": "10.0.9",
     "next-compose-plugins": "2.2.1",
     "next-images": "1.7.0",
-    "next-on-netlify": "2.9.0",
     "next-videos": "1.4.0",
     "nuka-carousel": "4.7.7",
     "react": "17.0.2",
@@ -37,23 +36,19 @@
   ],
   "license": "MIT",
   "scripts": {
-    "develop": "node ./scripts/pre-start",
-    "disable:contentful": "node -e 'require(\"./scripts/disable-contentful-modules.js\").resetConfig()'",
-    "enable:contentful": "node -e 'require(\"./scripts/enable-contentful-modules.js\").enableContentfulContent()'",
     "format": "pretty-quick --staged",
     "test": "jest",
     "lint": "eslint src",
     "test:coverage": "jest --env=jsdom --coverage",
     "test:watch": "jest --watch",
     "view:coverage": "open coverage/lcov-report/index.html",
-    "yarn:install": "yarn",
     "dev": "next",
-    "build": "next build",
-    "postbuild": "next-on-netlify"
+    "build": "next build"
   },
   "devDependencies": {
     "@babel/core": "7.13.10",
     "@babel/preset-env": "7.13.12",
+    "@netlify/plugin-nextjs": "3.0.3",
     "@testing-library/jest-dom": "5.11.10",
     "@testing-library/react": "11.2.5",
     "babel-eslint": "10.1.0",
