@@ -42,9 +42,9 @@
     "test:coverage": "jest --env=jsdom --coverage",
     "test:watch": "jest --watch",
     "view:coverage": "open coverage/lcov-report/index.html",
-    "dev": "next",
-    "export": "next build && next export",
-    "build": "next build"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "devDependencies": {
     "@babel/core": "7.13.10",
