@@ -3,31 +3,31 @@
   "version": "1.0.0",
   "repository": "Vets-Who-Code/vwc-site",
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "7.12.1",
-    "@babel/plugin-proposal-optional-chaining": "7.12.7",
-    "@babel/preset-react": "7.12.10",
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "@babel/plugin-proposal-optional-chaining": "7.13.12",
+    "@babel/preset-react": "7.12.13",
     "@contentful/rich-text-react-renderer": "14.1.2",
-    "@hot-loader/react-dom": "17.0.0",
-    "date-fns": "2.16.1",
+    "@hot-loader/react-dom": "17.0.1",
+    "date-fns": "2.19.0",
     "dotenv": "8.2.0",
     "generate": "0.14.0",
-    "intersection-observer": "0.11.0",
+    "intersection-observer": "0.12.0",
     "jimp": "0.16.1",
-    "next": "latest",
+    "next": "10.0.9",
     "next-compose-plugins": "2.2.1",
-    "next-images": "1.6.2",
+    "next-images": "1.7.0",
     "next-videos": "1.4.0",
-    "nuka-carousel": "4.7.1",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "nuka-carousel": "4.7.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-helmet": "6.1.0",
-    "react-hook-form": "6.9.6",
-    "react-icons": "3.11.0",
-    "react-modal": "3.11.2",
-    "react-slick": "0.27.12",
-    "react-toastify": "6.0.9",
+    "react-hook-form": "6.15.5",
+    "react-icons": "4.2.0",
+    "react-modal": "3.12.1",
+    "react-slick": "0.28.1",
+    "react-toastify": "7.0.3",
     "react-typed": "^1.2.0",
-    "reading-time": "1.2.0",
+    "reading-time": "1.3.0",
     "slick-carousel": "1.8.1"
   },
   "keywords": [
@@ -51,57 +51,29 @@
     "export": "next export"
   },
   "devDependencies": {
-    "@babel/core": "7.12.3",
-    "@testing-library/jest-dom": "5.11.5",
-    "@testing-library/react": "11.1.0",
+    "@babel/core": "7.13.10",
+    "@babel/preset-env": "7.13.12",
+    "@testing-library/jest-dom": "5.11.9",
+    "@testing-library/react": "11.2.5",
     "babel-eslint": "10.1.0",
-    "babel-jest": "26.6.1",
+    "babel-jest": "26.6.3",
     "cross-spawn": "7.0.3",
     "cross-spawn-with-kill": "1.0.0",
-    "eslint": "7.12.0",
-    "eslint-config-prettier": "6.14.0",
-    "eslint-plugin-prettier": "3.1.4",
-    "eslint-plugin-react": "7.21.5",
+    "eslint": "7.22.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-react": "7.23.1",
     "eslint-plugin-react-hooks": "4.2.0",
-    "inquirer": "7.3.3",
-    "jest": "26.6.1",
-    "lint-staged": "10.4.2",
+    "inquirer": "8.0.0",
+    "jest": "26.6.3",
+    "lint-staged": "10.5.4",
     "npm-run-all": "4.1.5",
-    "prettier": "2.1.2",
+    "prettier": "2.2.1",
     "pretty-quick": "3.1.0",
-    "react-test-renderer": "17.0.1",
+    "react-test-renderer": "17.0.2",
     "regenerator-runtime": "0.13.7"
   },
   "lint-staged": {
     "*": "yarn format"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/tests/setup-test-env.js"
-    ],
-    "testPathIgnorePatterns": [
-      "node_modules",
-      ".cache"
-    ],
-    "transform": {
-      "^.+\\.jsx?$": "<rootDir>/tests/jest-preprocess.js"
-    },
-    "transformIgnorePatterns": [
-      "node_modules/(?!(gatsby)/)"
-    ],
-    "globals": {
-      "__PATH_PREFIX__": ""
-    },
-    "setupFiles": [
-      "./tests/jest-preprocess.js",
-      "./tests/loadershim.js"
-    ],
-    "collectCoverageFrom": [
-      "src/components/**/*.{js,jsx}"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/__mocks__/image-mock.js",
-      "\\.(css|scss|sass)$": "<rootDir>/tests/__mocks__/style-mock.js"
-    }
   }
 }
