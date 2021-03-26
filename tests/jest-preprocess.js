@@ -1,4 +1,5 @@
 const babelOptions = {
+  babelrc: false,
   presets: [
     '@babel/preset-env',
     [
@@ -8,6 +9,7 @@ const babelOptions = {
       },
     ],
   ],
+  plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-proposal-optional-chaining'],
 }
 
 module.exports = require('babel-jest').createTransformer(babelOptions)
