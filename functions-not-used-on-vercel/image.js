@@ -1,3 +1,4 @@
+require('@babel/polyfill/noConflict')
 const jimp = require('jimp')
 
 exports.handler = async event => {
